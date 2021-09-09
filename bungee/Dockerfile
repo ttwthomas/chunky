@@ -1,4 +1,4 @@
-FROM openjdk
+FROM arm32v7/openjdk
 COPY rootfs /
 
 WORKDIR /

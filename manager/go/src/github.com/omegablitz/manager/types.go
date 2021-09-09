@@ -14,8 +14,8 @@ func ParseRawChunks(raw []interface{}) []Chunk {
 	for idx, rawChunkInter := range raw {
 		rawChunk := rawChunkInter.([]interface{})
 		chunks[idx] = Chunk{
-			x: int(rawChunk[0].(float64)),
-			y: int(rawChunk[1].(float64)),
+			x: int(rawChunk[0].(float32)),
+			y: int(rawChunk[1].(float32)),
 		}
 	}
 	return chunks
@@ -39,8 +39,8 @@ func ParseRawPlayerChunks(raw map[string]interface{}) map[Player]Chunk {
 	for rawPlayer, chunkInter := range raw {
 		chunk := chunkInter.([]interface{})
 		playerChunks[Player(rawPlayer)] = Chunk{
-			x: int(chunk[0].(float64)),
-			y: int(chunk[1].(float64)),
+			x: int(chunk[0].(float32)),
+			y: int(chunk[1].(float32)),
 		}
 	}
 	return playerChunks

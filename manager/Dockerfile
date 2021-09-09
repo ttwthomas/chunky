@@ -1,4 +1,4 @@
-FROM golang:1.8
+FROM arm32v7/golang:1.8
 
 WORKDIR /go/src/app
 COPY go/src/github.com/omegablitz/manager .

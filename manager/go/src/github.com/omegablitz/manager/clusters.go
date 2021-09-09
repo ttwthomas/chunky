@@ -104,10 +104,10 @@ func (cl *clusters) redistribute(serverList []Server) map[Server]*ServerAssignme
 	// do rebalancing to handle skew
 	for {
 		var minChunkServer Server
-		minChunkNumber := math.MaxInt64
+		minChunkNumber := math.MaxInt32
 
 		var maxChunkServer Server
-		maxChunkNumber := math.MinInt64
+		maxChunkNumber := math.MinInt32
 		var maxChunkLastBlobSize int
 		for server, assignment := range assignments {
 			if assignment.NumChunks < minChunkNumber {
